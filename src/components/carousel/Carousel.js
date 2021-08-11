@@ -22,6 +22,7 @@ const useStyles = makeStyles({
   },
 });
 
+// Carousel Component
 const Carousel = () => {
   const classes = useStyles();
   return (

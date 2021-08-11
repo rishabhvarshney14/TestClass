@@ -11,15 +11,15 @@ import Item from "./Item";
 // responsive attribute for 'react-multi-carousel'
 const responsive = {
   desktop: {
-    breakpoint: { max: 3000, min: 1024 },
+    breakpoint: { max: 3000, min: 1500 },
     items: 3,
   },
   tablet: {
-    breakpoint: { max: 1024, min: 464 },
-    items: 3,
+    breakpoint: { max: 1500, min: 1000 },
+    items: 2,
   },
   mobile: {
-    breakpoint: { max: 464, min: 0 },
+    breakpoint: { max: 1000, min: 0 },
     items: 1,
   },
 };
@@ -39,9 +39,10 @@ const CarouselItems = ({ heading, courses }) => {
         autoPlaySpeed={10000}
         keyBoardControl
         showDots={false}
-        removeArrowOnDeviceType={["tablet", "mobile"]}
+        removeArrowOnDeviceType={["mobile"]}
+        renderButtonGroupOutside
         dotListClass="custom-dot-list-style"
-        itemClass="carousel-item-padding-50-px"
+        itemClass="carousel-item-padding-100-px"
         coontainerClass="carousel-container"
       >
         {courses.map((course) => (

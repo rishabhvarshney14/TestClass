@@ -17,6 +17,9 @@ const useStyles = makeStyles((theme) => ({
     marginLeft: 10,
     width: "30%",
     border: "1px solid black",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   searchIcon: {
     padding: theme.spacing(0, 2),

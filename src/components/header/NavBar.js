@@ -8,9 +8,13 @@ import SearchBar from "./SearchBar";
 import NavButton from "./NavButton";
 
 // Styles
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
   component: {
     marginLeft: "12%",
+    [theme.breakpoints.down("md")]: {
+      display: "flex",
+      justifyContent: "space-around",
+    },
   },
   header: {
     backgroundColor: "#FFFFFF",
@@ -24,7 +28,7 @@ const useStyle = makeStyles({
   logoStart: {
     color: "lightblue",
   },
-});
+}));
 
 // Update Styles
 const ToolBar = withStyles({

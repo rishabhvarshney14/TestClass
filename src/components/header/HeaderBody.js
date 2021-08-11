@@ -7,19 +7,31 @@ import { Box, Button, makeStyles } from "@material-ui/core";
 import image from "./data/headerImage.jpg";
 
 // Styles
-const useStyle = makeStyles({
+const useStyle = makeStyles((theme) => ({
   container: {
     width: "80%",
     margin: "auto",
     height: 400,
     display: "flex",
     paddingTop: 30,
+    [theme.breakpoints.down("lg")]: {
+      marginBottom: 100,
+    },
+    [theme.breakpoints.down("sm")]: {
+      marginBottom: 180,
+    },
   },
   leftHeader: {
     width: "50%",
+    [theme.breakpoints.down("md")]: {
+      width: "100%",
+    },
   },
   rightHeader: {
     width: "50%",
+    [theme.breakpoints.down("md")]: {
+      display: "none",
+    },
   },
   headingText: {
     fontSize: 50,
@@ -36,8 +48,9 @@ const useStyle = makeStyles({
     height: "100%",
     borderRadius: 25,
   },
-});
+}));
 
+// HeaderBody Component
 const HeaderBody = () => {
   const classes = useStyle();
   return (
