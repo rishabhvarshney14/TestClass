@@ -25,10 +25,10 @@ const responsive = {
 };
 
 // CarouselItems Components
-const CarouselItems = () => {
+const CarouselItems = ({ heading, courses }) => {
   return (
     <Box>
-      <h3>Upcoming Courses</h3>
+      <p style={{ fontSize: 25, fontWeight: 700 }}>{heading}</p>
       <Carousel
         responsive={responsive}
         infinite
@@ -44,17 +44,16 @@ const CarouselItems = () => {
         itemClass="carousel-item-padding-50-px"
         coontainerClass="carousel-container"
       >
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
-        <Item />
+        {courses.map((course) => (
+          <Item
+            coursePhoto={course.coursePhoto}
+            date={course.date}
+            courseHeading={course.courseHeading}
+            authorImage={course.authorImage}
+            authorName={course.authorName}
+            authorOccupation={course.authorOccupation}
+          />
+        ))}
       </Carousel>
     </Box>
   );

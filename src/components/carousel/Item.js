@@ -4,10 +4,6 @@ import React from "react";
 import { Box, Button, makeStyles } from "@material-ui/core";
 import { Share } from "@material-ui/icons";
 
-// Data
-import cover_photo1 from "./data/cover_photo1.jpg";
-import author_image from "./data/author_image.jpeg";
-
 // Styles
 const useStyles = makeStyles({
   container: {
@@ -15,7 +11,11 @@ const useStyles = makeStyles({
     width: 320,
     borderRadius: 20,
     padding: 10,
+    marginTop: 20,
+    marginBottom: 20,
     background: "white",
+    boxShadow:
+      "0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)",
   },
   upper: {
     height: "45%",
@@ -31,6 +31,7 @@ const useStyles = makeStyles({
   },
   dateAndIcon: {
     display: "flex",
+    justifyContent: "space-around",
   },
   dateText: {
     width: "80%",
@@ -57,11 +58,11 @@ const useStyles = makeStyles({
   authorName: {
     fontSize: 15,
     fontWeight: 600,
-    paddingLeft: 30,
+    paddingRight: 30,
+    textAlign: "center",
   },
   shareIcon: {
     marginTop: 5,
-    marginLeft: 10,
   },
   button: {
     fontWeight: 600,
@@ -73,28 +74,32 @@ const useStyles = makeStyles({
   },
 });
 
-const Item = () => {
+const Item = (props) => {
   const classes = useStyles();
   return (
     <Box className={classes.container}>
       <Box className={classes.upper}>
-        <img className={classes.image} src={cover_photo1} alt="cover_photo" />
+        <img
+          className={classes.image}
+          src={props.coursePhoto}
+          alt="cover_photo"
+        />
       </Box>
       <Box className={classes.bottom}>
         <Box className={classes.dateAndIcon}>
-          <p className={classes.dateText}>Date: 15 Sept, 2021</p>
+          <p className={classes.dateText}>{props.date}</p>
           <Share className={classes.shareIcon} />
         </Box>
-        <h3 style={{ textAlign: "center" }}>Course Heading</h3>
+        <h3 style={{ textAlign: "center" }}>{props.courseHeading}</h3>
         <Box className={classes.author}>
           <img
             className={classes.authorImage}
-            src={author_image}
+            src={props.authorImage}
             alt="author_image"
           />
           <Box className={classes.authorName}>
-            <p>Author Name</p>
-            <p style={{ color: "#b5b5b5" }}>Occupation</p>
+            <p>{props.authorName}</p>
+            <p style={{ color: "#b5b5b5" }}>{props.authorOccupation}</p>
           </Box>
         </Box>
         <Button variant="contained" className={classes.button}>

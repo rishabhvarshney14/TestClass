@@ -6,6 +6,13 @@ import { Box, makeStyles } from "@material-ui/core";
 // Custom Components
 import CarouselItems from "./CarouselItems";
 
+// Custom Data
+import {
+  upcomingWorkshop,
+  trendingWorkshop,
+  upcomingCourses,
+} from "./courseDetails";
+
 // Styles
 const useStyles = makeStyles({
   container: {
@@ -19,12 +26,9 @@ const Carousel = () => {
   const classes = useStyles();
   return (
     <Box className={classes.container}>
-      <CarouselItems />
-      <CarouselItems />
-      <CarouselItems />
-      <CarouselItems />
-      <CarouselItems />
-      <CarouselItems />
+      <CarouselItems heading="Upcoming Workshops" courses={upcomingWorkshop} />
+      <CarouselItems heading="Trending Workshops" courses={trendingWorkshop} />
+      <CarouselItems heading="Upcoming Courses" courses={upcomingCourses} />
     </Box>
   );
 };

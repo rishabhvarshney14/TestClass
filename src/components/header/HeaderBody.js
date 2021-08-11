@@ -13,6 +13,7 @@ const useStyle = makeStyles({
     margin: "auto",
     height: 400,
     display: "flex",
+    paddingTop: 30,
   },
   leftHeader: {
     width: "50%",
@@ -33,6 +34,7 @@ const useStyle = makeStyles({
   image: {
     width: "100%",
     height: "100%",
+    borderRadius: 25,
   },
 });
 
