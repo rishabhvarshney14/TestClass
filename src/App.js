@@ -4,6 +4,7 @@ import React from "react";
 import Header from "./components/header/Header";
 import Carousel from "./components/carousel/Carousel";
 import Testimonials from "./components/testimonials/Testimonials";
+import Footer from "./components/footer/Footer";
 
 // App Component
 function App() {
@@ -12,6 +13,7 @@ function App() {
       <Header />
       <Carousel />
       <Testimonials />
+      <Footer />
     </div>
   );
 }
