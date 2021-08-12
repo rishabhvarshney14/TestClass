@@ -7,20 +7,27 @@ import TwitterIcon from "@material-ui/icons/Twitter";
 import InstagramIcon from "@material-ui/icons/Instagram";
 import LinkedInIcon from "@material-ui/icons/LinkedIn";
 
+// Custom Components
+import FooterTable from "./FooterTable";
+
 // Styles
 const useStyles = makeStyles({
   container: {
     width: "100%",
-    height: 300,
     backgroundColor: "#141414",
     color: "white",
+    paddingBottom: 20,
   },
   component: {
     width: "80%",
     margin: "auto",
     paddingTop: 25,
+    display: "flex",
+    justifyContent: "space-between",
   },
-  left: {},
+  left: {
+    width: "40%",
+  },
   logo: {
     fontSize: 25,
     marginRight: 25,
@@ -41,6 +48,7 @@ const useStyles = makeStyles({
     height: 30,
     width: 30,
   },
+  right: {},
 });
 
 const Footer = () => {
@@ -61,6 +69,10 @@ const Footer = () => {
           </Box>
           <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
           <p>Vivamus at leo eu erat volutpat sagittis.</p>
+        </Box>
+
+        <Box className={classes.right}>
+          <FooterTable />
         </Box>
       </Box>
     </Box>
